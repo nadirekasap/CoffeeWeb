@@ -1,2 +1,2 @@
 Responsive Site
-##Responsive Site çalışmasıdır.
+Responsive Site çalışmasıdır.
