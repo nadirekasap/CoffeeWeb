@@ -1,0 +1,468 @@
+/* Tasarımda sonradan engel olmaması için tüm kenarlarımı sıfırladım.*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap');
+
+/* HEADER START*/ 
+
+*, /*Tüm etiketler*/
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    
+}
+*:not([class^="fa"]) {
+    font-family: 'Poppins','Herr Von Muellerhoff' sans-serif !important;
+    }
+a,
+a:link,
+a:visited{
+    text-decoration: none; /*Altı çizili istemiyorum*/
+    outline: none; /*Üstüne basıldığında etiketten gelen kenarlıkları istemiyorum*/
+    border: none;
+}
+
+ul,
+li{
+    list-style: none; /* Liste olduğunu belirlten nokta vs. onları istemiyorum*/
+    margin: 0;
+    padding: 0;
+}
+
+section,
+span,
+p{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+/* Bu kalıbı her zaman kullanabiliriz -Resetleme Kodları*/
+
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.header{
+    background-image: url(/img/menu5.jpg);
+    background-position: center; /*ortala*/
+    background-size: cover; /* kapla*/
+    background-attachment: fixed; /*sabit kal*/
+    height: 100vh; /*tüm ekran boyutunu kapla , responsive (tablet vs de kaplr) */
+
+}
+.header-navbar{
+    display:flex;
+    align-items: center;
+    justify-content: space-between; /* birbirinden ayıracağım*/
+    padding: 40px 0;
+}
+.header-logo{
+    font-size: 16px;
+    letter-spacing: 2px; /*harfler arasında boşluk */
+    border-bottom: 5px solid #000;
+    border-radius: 35px;
+    padding-bottom: 5px;
+}
+ul{
+    display:flex; /*navbarı sağa yan yana aldık*/
+}
+li{
+    margin-left: 27px; /*aralarına boşluk verdik*/
+}
+a{  
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+}
+.header-text{
+    position:absolute; /* sayesinde top,left,right buttom değerleri verebileceğim. */
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%); /*X koordinatında hizala (sayfamın tam ortasına alacağım) */ 
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  /* yan yana hizalılardı şimdi sütun olarak hizaladık. */
+}
+h1{
+    font-size: 8.5rem;
+    font-weight: 100; /* ince yapıda yapacağım*/
+    line-height: 0.4; /*satır boşluğu */
+    letter-spacing: 2px; /*harfler arası boşluk*/
+    font-family: 'Herr Von Muellerhoff', cursive;
+    color:#6d4c41;
+}
+.first-letter{
+    font-size:10.3rem ; /*W daha büyük olsun istedim. */
+    font-family: 'Herr Von Muellerhoff', cursive;
+    color:#6d4c41;
+}
+h3{
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+.btn-coffee{
+    display: block; /*Buton olduğu için tüm satırı kapladık */
+    background-color:#6d4c41;
+    color:#fff;
+    padding:10px 15px; /*Alttan üstten 10 kenarlardan 15px boşluk verdim.*/
+    border-top-left-radius: 35px;  /* Kutuma radius vererek şekillerimi elde ediyorum. */
+    border-bottom-right-radius: 35px;
+    position:relative; /* animasyona absolute verdiğimiz için */
+    overflow: hidden;
+}
+.btn-coffee::after{
+    content: " BUY";
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    background-color: #9c786c;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s ;
+}
+.btn-coffee:hover::after{
+    top :0;
+}
+
+/*HEADER END */
+
+/*ABOUT START */
+.about{
+    margin-bottom: 150px;
+}
+.about-tittle{
+    margin: 60px 0;
+
+}
+.about-tittle h2{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color: #6d4c41;
+    font-size: 30px;
+    font-weight: 600;  /* biraz kalınlaştırdım */
+}
+.about-tittle h2::after{
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #6d4c41;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+.about-content {
+    display: flex;
+    align-items: center;/*yatayda hizaladım */
+    justify-content: space-around;/*yazı ve görseli ayırdık*/
+    flex-wrap:wrap;
+}
+.about-img {
+  width: 40%;
+}
+.about-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*görselin en boy oranını koruyarak bir yerleşim sağladık.  */ 
+}
+.about-text {
+    width:40%;
+}
+h4{
+    margin-bottom: 25px;
+    text-align: center; /*başlığımı hizaladım */
+    font-size: 60px;
+    color: #6d4c41;
+    font-family: 'Herr Von Muellerhoff', cursive;
+    letter-spacing: 0.5rem; /*harfler arası boşluk */
+    font-weight: 100; /*incelttim */
+}
+#mug{
+    color: #6d4c41;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.about-text p{  /*about text altındaki p etiketi */
+    font-size:15px;
+    text-align: center;
+    color:#2c2727;
+
+}
+
+/*ABOUT END */
+
+/*PORTFOLİO START*/
+.portfolio{
+    display: flex;
+    flex-wrap: wrap;
+}
+.portfolio-item{
+    width: 25%;
+    height: 300px;
+    overflow: hidden; /*taşmaları önledik */
+    position: relative;
+}
+.portfolio-item img{
+    width: 100%;    /*görsellerimi bu kodlarla istediğim boyutta tutuyorum ve koruyorum */
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+/* animasyon */
+.overlay{ 
+    width: 100%; /* komple kaplamasını istiyorum */
+    height: 100%;
+    background-color:#5b2a02;
+    position: absolute;  /* absolute dediğim için portfolio item a position relative vermeliyim. */
+    top: 100%;
+    left: 0;
+    opacity: 0.8;
+    color:#fff;
+    font-size : 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;  /* daha yavaş geçiş yaptım */
+
+}
+.portfolio-item:hover .overlay { /*overlay için animasyon vereceğim*/
+    top:0;
+}
+.portfolio-item:hover img{/*üstüne geldiğim zaman image için */
+transform: scale(1.1); /*Üstüne geldiğimde görseller büyür */
+} 
+/*PORTFOLİO END*/
+
+/*ABOUT START */
+.about{
+    margin-bottom: 150px;
+}
+.about-tittle{
+    margin: 60px 0;
+
+}
+.about-tittle h2{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color: #6d4c41;
+    font-size: 30px;
+    font-weight: 600;  /* biraz kalınlaştırdım */
+}
+.about-tittle h2::after{
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #6d4c41;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+.about-content {
+    display: flex;
+    align-items: center;/*yatayda hizaladım */
+    justify-content: space-around;/*yazı ve görseli ayırdık*/
+}
+.about-img {
+  width: 40%;
+}
+.about-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*görselin en boy oranını koruyarak bir yerleşim sağladık.  */ 
+}
+.about-text {
+    width:40%;
+}
+h4{
+    margin-bottom: 25px;
+    text-align: center; /*başlığımı hizaladım */
+    font-size: 60px;
+    color: #6d4c41;
+    font-family: 'Herr Von Muellerhoff', cursive;
+    letter-spacing: 0.5rem; /*harfler arası boşluk */
+    font-weight: 100; /*incelttim */
+}
+#mug{
+    color: #6d4c41;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.about-text p{  /*about text altındaki p etiketi */
+    font-size:15px;
+    text-align: center;
+    color:#2c2727;
+
+}
+
+/*ABOUT END */
+
+/*CONTACT START */
+#contact{
+    padding: 10px 0;
+}
+#contact h2{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color: #6d4c41;
+    font-size: 30px;
+    font-weight: 600;
+}
+#contact h2::after{
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #6d4c41;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+.contact-content{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.contact-item{
+    display:flex;
+    align-items: center;
+    flex-basis: 33%;
+    margin-bottom: 100px;
+    flex-direction: column;
+}
+.contact-item i{
+    font-size:25px;
+    margin-bottom: 30px;
+    color:#6d4c41;
+}
+.contact-item p{
+    font-size: 14px;
+    line-height: 33px;
+}
+/*CONTACT END */
+
+/*FOOTER START*/
+.footer h2{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color: #6d4c41;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 55px 0;
+}
+.footer h2::after{
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #6d4c41;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px; 
+}
+.footer{
+    background-color: #000;
+}
+.footer-copyright{
+    color: #fff;
+    text-align: center;
+    flex-basis: 50%; /* 55%'lik alan verdim */
+    line-height: 2; /*satır boşluğu*/
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.footer-social i{
+    color: #fff;
+    margin-bottom: 50px;
+    font-size: 25px;
+    padding: 0 40px;
+}
+.footer-social:first-child{
+    margin-left: 70px;
+}
+/*FOOTER END*/
+
+/*MENU RESPONSİVE */
+#menu-icon{
+    font-size: 25px;
+    display: none; /*daha büyük ekranlarda çıkmasını istemiyorum */
+    margin-left: 20px;
+}
+
+@media only screen and (max-width:800px){
+    .header-menu ul{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left:0px;
+        background-color:#422e28c4 ;
+        width: 100%;   
+        overflow: hidden; /*taşmaları engelleyeceğim */
+        transition: max-height .5s;
+    }
+    .header-menu ul li{
+        margin-right: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .header-menu ul li a{
+        color:#fff;
+    }
+    .header-menu #menu-icon{
+        display: block;
+        cursor: pointer; /*Fareyle üstüne geldiğimde el işareti çıkar */
+    }
+}
+/*ABOUT RESPONSİVE */
+@media only screen and (max-width:990px){
+    .about-img{
+        width:100%;
+        margin-bottom: 30px;
+    }
+    .about-text{
+        width:100%;
+    }
+}
+/*PORTFOLİO RESPONSİVE */
+@media only screen and (max-width:990px){
+    .portfolio .portfolio-item{
+        flex-basis:50%;
+    }
+}
+
+@media only screen and (max-width:580px){
+    .portfolio .portfolio-item{
+        flex-basis: 100%;
+    }
+}
+@media only screen and (max-width:800px){
+    .contact-content{
+        flex-direction: column; /*belli bir pixelden sonra sütun şeklinde duracak */
+    }
+    .contact-item{
+        margin-top: 30px;
+    }
+    .contact-item p{
+        width: 100%;
+        text-align: center;
+    }
+}
